@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aurora Design - Soluções criativas em design e desenvolvimento web para transformar sua presença digital">
+  <meta name="keywords" content="design, web, desenvolvimento, criativo, digital, aurora">
+  <meta name="author" content="Aurora Design">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+  <title>Aurora Design - Início</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+    
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100%;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 20px 40px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    
+    .company-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #2d3748;
+    }
+    
+    .slogan {
+      font-size: 12px;
+      color: #718096;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 15px 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      list-style: none;
+    }
+    
+    nav a {
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    nav a:hover, nav a.active {
+      display: flex;
+      justify-content: center;
+      color: #667eea;
+      background: rgba(102, 126, 234, 0.1);
+    }
+    
+    nav a.active::after {
+      display: flex;
+      justify-content: center;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 3px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+    
+    main {
+      display: flex;
+      gap: 20px;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    
+    section {
+      flex: 3;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .conteudo {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    .conteudo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #2d3748;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, #667eea, #764ba2) 1;
+      padding-bottom: 15px;
+    }
+    
+    .conteudo p {
+      font-size: 17px;
+      color: #4a5568;
+      line-height: 1.8;
+    }
+    
+    .imagem-destaque {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .imagem-destaque::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      top: -50px;
+      right: -50px;
+    }
+    
+    .imagem-destaque::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      bottom: -30px;
+      left: -30px;
+    }
+    
+    .imagem-destaque span {
+      font-size: 80px;
+      z-index: 1;
+    }
+    
+    aside {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    aside h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #2d3748;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    
+    .info-box {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      border-radius: 10px;
+      padding: 20px;
+      border-left: 4px solid #667eea;
+    }
+    
+    .info-box h4 {
+      color: #667eea;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    
+    .info-box p {
+      font-size: 14px;
+      color: #4a5568;
+    }
+    
+    .destaque-lista {
+      list-style: none;
+    }
+    
+    .destaque-lista li {
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #4a5568;
+    }
+    
+    .destaque-lista li:last-child {
+      border-bottom: none;
+    }
+    
+    .destaque-lista li::before {
+      content: '✦';
+      color: #667eea;
+    }
+    
+    footer {
+      background: #e2e8f0;
+      border-radius: 16px;
+      padding: 30px 40px;
+      color: rgba(45, 55, 72, 0.95);
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    footer p {
+      font-size: 14px;
+    }
+    
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 15px;
+    }
+    
+    footer a {
+      color: #a0aec0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    footer a:hover {
+      color: #667eea;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      
+      main {
+        flex-direction: column;
+      }
+      
+      .conteudo h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <header>
+    <div class="logo-container">
+     <div class="logo">
+      ✨
+     </div>
+     <div>
+      <div class="company-name" id="company-name">
+       Aurora Design
+      </div>
+      <div class="slogan" id="slogan">
+       Iluminando suas ideias
+      </div>
+    </div>
+    </div>
+    <nav>
+    <ul>
+     <li><a href="#inicio" class="active" data-page="index">Início</a></li>
+     <li><a href="#sobre" data-page="sobre">Sobre</a></li>
+     <li><a href="#fotos" data-page="fotos">Fotos</a></li>
+     <li><a href="#contato" data-page="contato">Contato</a></li>
+    </ul>
+   </nav>
+   </header>
+   
+   <main>
+     <aside id="sidebar-content">
+    </aside>
+    <section>
+     <div class="conteudo" id="main-content">
+     </div>
+    </section>
+    <aside id="sidebar-content">
+    </aside>
+   </main>
+   <footer>
+    <p>© 2026 <span id="footer-company">Aurora Design</span>. Todos os direitos reservados.</p>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      company_name: 'Aurora Design',
+      slogan: 'Iluminando suas ideias'
+    };
+
+    const pages = {
+      index: {
+        title: 'Bem-vindo à Aurora Design',
+        content: `
+          <h1>Bem-vindo à Aurora Design</h1>
+          <p>Somos uma empresa apaixonada por criar experiências digitais memoráveis. Com mais de uma década de experiência no mercado, transformamos ideias em realidade através de design inovador e tecnologia de ponta.</p>
+          <div class="imagem-destaque">
+            <span>🌟</span>
+          </div>
+          <p>Nossa equipe de especialistas está pronta para dar vida aos seus projetos mais ambiciosos. Desde websites elegantes até aplicativos móveis intuitivos, cada projeto é tratado com dedicação e criatividade únicas.</p>
+        `,
+        sidebar: `
+          <h3>Destaques</h3>
+          <div class="info-box">
+            <h4>Novidades</h4>
+            <p>Confira nossos últimos projetos e tendências em design digital.</p>
+          </div>
+          <h3>Nossos Serviços</h3>
+          <ul class="destaque-lista">
+            <li>Web Design Responsivo</li>
+            <li>Desenvolvimento de Apps</li>
+            <li>Branding & Identidade</li>
+            <li>Marketing Digital</li>
+          </ul>
+        `
+      },
+      sobre: {
+        title: 'Sobre Nós',
+        content: `
+          <h1>Sobre Nós</h1>
+          <p>A Aurora Design nasceu em 2014 com a missão de revolucionar a forma como empresas se conectam com seus clientes no ambiente digital. Acreditamos que design não é apenas estética, mas uma ferramenta poderosa de comunicação.</p>
+          <div class="imagem-destaque">
+            <span>👥</span>
+          </div>
+          <p>Nossa equipe é formada por designers, desenvolvedores e estrategistas digitais apaixonados pelo que fazem. Juntos, já realizamos mais de 500 projetos para clientes em diversos segmentos do mercado.</p>
+        `,
+        sidebar: `
+          <h3>Nossa Missão</h3>
+          <div class="info-box">
+            <h4>Propósito</h4>
+            <p>Criar soluções digitais que transformam negócios e encantam usuários.</p>
+          </div>
+          <h3>Valores</h3>
+          <ul class="destaque-lista">
+            <li>Inovação Constante</li>
+            <li>Excelência em Design</li>
+            <li>Compromisso com Resultados</li>
+            <li>Transparência Total</li>
+          </ul>
+        `
+      },
+      fotos: {
+        title: 'Galeria de Fotos',
+        content: `
+          <h1>Galeria de Fotos</h1>
+          <p>Conheça alguns dos nossos trabalhos mais recentes. Cada projeto é único e desenvolvido com atenção aos mínimos detalhes para superar as expectativas dos nossos clientes.</p>
+          <div class="imagem-destaque">
+            <span>📸</span>
+          </div>
+          <p>Nossa galeria representa apenas uma pequena amostra do que podemos criar. Entre em contato para ver mais exemplos específicos do seu segmento de interesse.</p>
+        `,
+        sidebar: `
+          <h3>Categorias</h3>
+          <div class="info-box">
+            <h4>Projetos</h4>
+            <p>Explore nosso portfólio por categoria de projeto.</p>
+          </div>
+          <h3>Áreas</h3>
+          <ul class="destaque-lista">
+            <li>E-commerce</li>
+            <li>Institucional</li>
+            <li>Aplicativos</li>
+            <li>Redes Sociais</li>
+          </ul>
+        `
+      },
+      contato: {
+        title: 'Contato',
+        content: `
+          <h1>Entre em Contato</h1>
+          <p>Estamos prontos para ouvir suas ideias e transformá-las em projetos incríveis. Nossa equipe responde em até 24 horas úteis.</p>
+          <div class="imagem-destaque">
+            <span>✉️</span>
+          </div>
+          <p>Você pode nos encontrar também em nossas redes sociais ou visitar nosso escritório. Será um prazer recebê-lo para um café e uma conversa sobre seu próximo projeto!</p>
+        `,
+        sidebar: `
+          <h3>Informações</h3>
+          <div class="info-box">
+            <h4>Localização</h4>
+            <p>Av. Paulista, 1000 - São Paulo, SP</p>
+          </div>
+          <h3>Canais</h3>
+          <ul class="destaque-lista">
+            <li>📧 contato@aurora.design</li>
+            <li>📱 (11) 99999-0000</li>
+            <li>💬 WhatsApp Business</li>
+            <li>🔗 @auroradesign</li>
+          </ul>
+        `
+      }
+    };
+
+    let currentPage = 'index';
+
+    function loadPage(pageName) {
+      const page = pages[pageName];
+      if (!page) return;
+      
+      currentPage = pageName;
+      
+      document.getElementById('main-content').innerHTML = page.content;
+      document.getElementById('sidebar-content').innerHTML = page.sidebar;
+      
+      document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.page === pageName) {
+          link.classList.add('active');
+        }
+      });
+      
+      window.location.hash = pageName === 'index' ? 'inicio' : pageName;
+    }
+
+    function setupNavigation() {
+      document.querySelectorAll('[data-page]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          loadPage(link.dataset.page);
+        });
+      });
+    }
+
+    function handleHashChange() {
+      const hash = window.location.hash.slice(1);
+      const pageMap = {
+        'inicio': 'index',
+        'sobre': 'sobre',
+        'fotos': 'fotos',
+        'contato': 'contato'
+      };
+      const pageName = pageMap[hash] || 'index';
+      if (pageName !== currentPage) {
+        loadPage(pageName);
+      }
+    }
+
+    async function onConfigChange(config) {
+      const companyName = config.company_name || defaultConfig.company_name;
+      const slogan = config.slogan || defaultConfig.slogan;
+      
+      document.getElementById('company-name').textContent = companyName;
+      document.getElementById('slogan').textContent = slogan;
+      document.getElementById('footer-company').textContent = companyName;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['company_name', config.company_name || defaultConfig.company_name],
+        ['slogan', config.slogan || defaultConfig.slogan]
+      ]);
+    }
+
+    setupNavigation();
+    loadPage('index');
+    window.addEventListener('hashchange', handleHashChange);
+    
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9db2cddc464ecb20',t:'MTc3MzMxODU2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
